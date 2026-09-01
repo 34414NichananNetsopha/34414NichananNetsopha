@@ -1,15 +1,15 @@
 /* ─── สไตล์ธีมพาสเทล (Pastel Pink, Blue, Mint Green + Gold Sparkles) ─── */
 :root {
-  --pastel-pink: #ffd6e0;      /* ชมพูพาสเทล */
-  --pastel-blue: #c8e7ff;      /* ฟ้าพาสเทล */
-  --pastel-green: #d8f3dc;     /* เขียวมินต์พาสเทล */
-  --pastel-purple: #e7c6ff;    /* ม่วงพาสเทล */
+  --pastel-pink: #ffd6e0;      
+  --pastel-blue: #c8e7ff;      
+  --pastel-green: #d8f3dc;     
+  --pastel-purple: #e7c6ff;    
   
-  --gold-accent: #f7b731;      /* ทองประกาย */
+  --gold-accent: #f7b731;      
   --gold-glow: rgba(247, 183, 49, 0.4);
   
-  --card-bg: rgba(255, 255, 255, 0.85); /* กระจกสีขาวใสโปร่งแสง */
-  --text-dark: #2b2d42;        /* ข้อความสีเทาเข้ม อ่านง่าย */
+  --card-bg: rgba(255, 255, 255, 0.88); 
+  --text-dark: #2b2d42;        
   --text-muted: #5c677d;
   --primary-pink: #ff6b9b;
   --primary-blue: #0096c7;
@@ -29,13 +29,12 @@ html {
 
 body {
   overflow-x: hidden;
-  /* พื้นหลังไล่สีพาสเทล ชมพู ฟ้า เขียว นุ่มนวล */
   background: linear-gradient(135deg, #ffe5ec 0%, #e0f2fe 50%, #e8f5e9 100%);
   background-attachment: fixed;
   position: relative;
 }
 
-/* ─── ประกายวิ้งๆ สีทอง (Sparkles / Gold Glow) ─── */
+/* ─── Sparkles Background ─── */
 .sparkles-container {
   position: fixed;
   top: 0;
@@ -75,7 +74,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 2px solid var(--pastel-pink);
@@ -87,7 +86,7 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 12px 22px;
+  gap: 12px 20px;
   padding: 14px 10px;
 }
 
@@ -95,7 +94,7 @@ body {
   text-decoration: none;
   color: var(--text-dark);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   transition: all 0.3s ease;
 }
 
@@ -107,38 +106,39 @@ body {
 /* ─── Header / หน้าปก ─── */
 header {
   text-align: center;
-  padding: 130px 20px 70px 20px;
+  padding: 130px 20px 65px 20px;
   background: radial-gradient(circle at center, rgba(255, 255, 255, 0.9) 0%, transparent 80%);
   position: relative;
   z-index: 1;
 }
 
-.profile-img {
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
+/* ปรับเป็นรูปสี่เหลี่ยมผืนผ้าขอบมนทรงการ์ดสวยงาม */
+.profile-img-rect {
+  width: 180px;
+  height: 220px;
+  border-radius: 16px;
   object-fit: cover;
   border: 4px solid #fff;
-  box-shadow: 0 0 0 4px var(--primary-pink), 0 8px 25px rgba(255, 107, 155, 0.3);
-  transition: transform 0.5s ease;
+  box-shadow: 0 0 0 3px var(--primary-pink), 0 10px 30px rgba(255, 107, 155, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.profile-img:hover {
-  transform: scale(1.05) rotate(3deg);
-  box-shadow: 0 0 0 4px var(--primary-blue), 0 8px 25px rgba(0, 150, 199, 0.3);
+.profile-img-rect:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 0 4px var(--primary-blue), 0 15px 35px rgba(0, 150, 199, 0.3);
 }
 
 header h1 {
-  font-size: 3.5rem;
+  font-size: 3.3rem;
   font-weight: 900;
   letter-spacing: 3px;
   color: #ff477e;
-  margin-top: 15px;
+  margin-top: 18px;
   text-shadow: 2px 2px 0px #fff, 0 0 15px rgba(255, 71, 126, 0.3);
 }
 
 header .subtitle {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   color: var(--primary-blue);
   font-weight: bold;
   margin-top: 5px;
@@ -146,17 +146,28 @@ header .subtitle {
 
 .cover-details {
   margin-top: 18px;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--text-dark);
 }
 
 .cover-details .student-name {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: bold;
-  color: #2b2d42;
+  color: #ff477e;
 }
 
-/* ─── Main Content Layout ─── */
+.cover-details .student-level,
+.cover-details .student-plan {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.cover-details .school-name {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+/* ─── Layout & Cards ─── */
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -167,7 +178,7 @@ header .subtitle {
 
 section {
   scroll-margin-top: 90px;
-  padding: 45px 0;
+  padding: 40px 0;
 }
 
 section h2 {
@@ -179,13 +190,12 @@ section h2 {
   text-shadow: 1px 1px 0 #fff;
 }
 
-/* ─── Card Design ─── */
 .section-card {
   background: var(--card-bg);
   border-radius: 16px;
   padding: 30px;
   border: 2px solid #fff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), inset 0 0 15px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(8px);
 }
 
@@ -214,21 +224,16 @@ section h2 {
   width: 100%;
   height: 230px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 14px;
   border: 3px solid #fff;
   box-shadow: 0 6px 20px rgba(0, 150, 199, 0.15);
-}
-
-.img-caption {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-top: 8px;
 }
 
 .signature-box {
   margin-top: 20px;
   text-align: right;
-  color: var(--primary-blue);
+  color: var(--primary-pink);
+  font-size: 1.05rem;
 }
 
 /* ─── Info List (ประวัติส่วนตัว) ─── */
@@ -239,7 +244,7 @@ section h2 {
 .info-list li {
   margin-bottom: 12px;
   font-size: 1rem;
-  border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.12);
   padding-bottom: 6px;
 }
 
@@ -247,16 +252,16 @@ section h2 {
   color: var(--primary-pink);
 }
 
-/* ─── Badges & Tags ─── */
+/* ─── Badges ─── */
 .badge {
   display: inline-block;
   padding: 4px 14px;
   border-radius: 20px;
   background: var(--pastel-blue);
   color: var(--primary-blue);
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   border: 1px solid rgba(0, 150, 199, 0.2);
 }
 
@@ -267,47 +272,41 @@ section h2 {
 }
 
 /* ─── Education Section ─── */
-.edu-title {
-  color: var(--primary-blue);
-  font-size: 1.3rem;
-  margin-bottom: 5px;
-}
-
-.school-name-text {
-  font-weight: bold;
-  color: var(--primary-pink);
-  margin-bottom: 15px;
-}
-
 .edu-info-list {
   list-style: none;
 }
 
 .edu-info-list li {
-  margin-bottom: 8px;
-  font-size: 0.95rem;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.edu-info-list strong {
+  color: var(--primary-blue);
 }
 
 /* ─── Future Study (2 รูป 2 มหาลัย) ─── */
 .future-intro {
   margin-bottom: 25px;
-  line-height: 1.7;
-  font-size: 1.05rem;
+  line-height: 1.8;
+  font-size: 1.02rem;
+  text-indent: 2em;
 }
 
 .uni-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
 }
 
 .uni-card {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 14px;
   overflow: hidden;
   border: 2px solid var(--pastel-blue);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .uni-card:hover {
@@ -317,43 +316,32 @@ section h2 {
 
 .uni-img {
   width: 100%;
-  height: 180px;
+  height: 190px;
   object-fit: cover;
 }
 
 .uni-info {
   padding: 20px;
-}
-
-.uni-info h4 {
-  color: var(--text-dark);
-  font-size: 1.15rem;
-  margin: 5px 0;
+  text-align: center;
 }
 
 .faculty-name {
-  color: var(--primary-pink);
+  color: #ff477e;
   font-weight: bold;
-  font-size: 0.95rem;
-  margin-bottom: 10px;
+  font-size: 1.05rem;
+  margin-top: 5px;
 }
 
-.uni-desc {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-/* ─── Gallery / 6 Activities Grid ─── */
-.gallery-grid {
+/* ─── Gallery Grid (4 กิจกรรม: 2 บน 2 ล่าง) ─── */
+.gallery-grid-4 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
 }
 
 .gallery-card {
   background: var(--card-bg);
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
   border: 2px solid #fff;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
@@ -361,90 +349,74 @@ section h2 {
 }
 
 .gallery-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
   box-shadow: 0 12px 25px rgba(255, 107, 155, 0.2);
   border-color: var(--pastel-pink);
 }
 
 .gallery-img {
   width: 100%;
-  height: 190px;
+  height: 200px;
   object-fit: cover;
 }
 
 .gallery-info {
-  padding: 18px;
+  padding: 16px;
 }
 
-.activity-date {
-  font-size: 0.78rem;
-  color: var(--primary-pink);
-  font-weight: bold;
-}
-
-.gallery-info h4 {
+.activity-desc {
   color: var(--text-dark);
-  margin: 6px 0;
-  font-size: 1.05rem;
-}
-
-.gallery-info p {
-  color: var(--text-muted);
-  font-size: 0.88rem;
-  line-height: 1.5;
-}
-
-/* ─── Skills Section (ข้อความล้วน) ─── */
-.skills-text-container {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.skill-cat-title {
-  font-size: 1.1rem;
-  color: var(--text-dark);
-  margin-bottom: 12px;
-}
-
-.skills-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  list-style: none;
-}
-
-.skills-tags li {
-  background: var(--pastel-blue);
-  color: var(--primary-blue);
-  border: 1px solid rgba(0, 150, 199, 0.2);
-  padding: 8px 18px;
-  border-radius: 20px;
+  font-size: 0.95rem;
+  line-height: 1.6;
   font-weight: 600;
-  font-size: 0.9rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-  transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.skills-tags.alt-theme li {
-  background: var(--pastel-pink);
-  color: #ff477e;
-  border-color: rgba(255, 71, 126, 0.2);
+/* ─── Skills Section (วงรีพาสเทล 3 สี) ─── */
+.skills-pill-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px 0;
 }
 
-.skills-tags.gold-theme li {
-  background: #fff3d6;
-  color: #d48806;
-  border-color: rgba(247, 183, 49, 0.4);
+.skill-pill {
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
 }
 
-.skills-tags li:hover {
-  transform: translateY(-3px) scale(1.03);
+.skill-pill:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* สีพาสเทล 3 โทน */
+.pill-pink {
+  background: #ffd6e0;
+  color: #d81b60;
+  border: 2px solid #ffb3c6;
+}
+
+.pill-blue {
+  background: #c8e7ff;
+  color: #0077b6;
+  border: 2px solid #90e0ef;
+}
+
+.pill-green {
+  background: #d8f3dc;
+  color: #2d6a4f;
+  border: 2px solid #b7e4c7;
 }
 
 /* ─── Footer ─── */
 footer {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   text-align: center;
   padding: 40px 20px;
   margin-top: 60px;
@@ -453,25 +425,32 @@ footer {
   z-index: 1;
 }
 
-footer p {
-  margin: 8px 0;
-  font-size: 0.95rem;
+footer h3 {
+  color: #ff477e;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.contact-grid {
+  line-height: 2;
+  font-size: 1rem;
 }
 
 footer a {
-  color: var(--primary-pink);
+  color: var(--primary-blue);
   text-decoration: none;
   font-weight: bold;
 }
 
 footer a:hover {
   text-decoration: underline;
+  color: var(--primary-pink);
 }
 
 .copyright {
   color: var(--text-muted);
   font-size: 0.85rem;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 /* ─── Animation Fade In ─── */
@@ -497,7 +476,11 @@ footer a:hover {
     width: 100%;
   }
 
+  .gallery-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
   header h1 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
 }
