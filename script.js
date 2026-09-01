@@ -22,4 +22,4 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-console.log("Pastel Portfolio Loaded!");
+console.log("Portfolio Loaded Successfully!");
