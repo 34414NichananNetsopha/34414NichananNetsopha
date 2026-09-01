@@ -1,10 +1,10 @@
-// แสดงปีปัจจุบันใน Footer อัตโนมัติ
+// อัปเดตปี ค.ศ. ปัจจุบันอัตโนมัติในส่วน Footer
 const yearElement = document.getElementById("year");
 if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
 }
 
-// เอฟเฟกต์ Fade In ตอนเลื่อนหน้าจอ (Scroll Animation)
+// เอฟเฟกต์ Scroll Fade-In เลื่อนหน้าจอแล้วค่อยๆ ปรากฏ
 const sections = document.querySelectorAll("section");
 
 const observer = new IntersectionObserver(entries => {
@@ -14,7 +14,7 @@ const observer = new IntersectionObserver(entries => {
         }
     });
 }, { 
-    threshold: 0.2 
+    threshold: 0.12 
 });
 
 sections.forEach(section => {
@@ -22,5 +22,4 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-// ข้อความต้อนรับใน Console
-console.log("Welcome to THANACHAI Portfolio");
+console.log("Portfolio Loaded Successfully!");
