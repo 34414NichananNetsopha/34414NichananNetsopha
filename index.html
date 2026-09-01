@@ -6,10 +6,12 @@
   <meta name="description" content="แฟ้มสะสมผลงาน (Portfolio) ของ ณิชนันท์ เนตรโสภา">
   <title>แฟ้มสะสมผลงาน - ณิชนันท์ เนตรโสภา // PORTFOLIO</title>
   
+  <!-- เชื่อมต่อไฟล์สไตล์ CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- ประกายวิ้งๆ สีทอง (Sparkles background) -->
   <div class="sparkles-container">
     <div class="sparkle s1">✨</div>
     <div class="sparkle s2">⭐</div>
@@ -21,6 +23,7 @@
     <div class="sparkle s8">🌟</div>
   </div>
 
+  <!-- แถบเมนูลอยแบบโปร่งแสง (Navbar) -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="#cover">หน้าปก</a>
@@ -33,10 +36,12 @@
     </div>
   </nav>
 
+  <!-- 1. หน้าปก (Cover) -->
   <header id="cover">
     <div class="cover-content">
       <div class="avatar-wrapper">
-        <img src="Untitled design.png" alt="ณิชนันท์ เนตรโสภา" class="profile-img-rect">
+        <!-- รูปหน้าปกขนาดเท่ากับรูปส่วนอื่นๆ -->
+        <img src="Untitled design.png" alt="ณิชนันท์ เนตรโสภา" class="standard-img">
       </div>
       <h1>PORTFOLIO</h1>
       <p class="subtitle">✨ แฟ้มสะสมผลงาน ✨</p>
@@ -51,6 +56,7 @@
 
   <main class="container">
 
+    <!-- 2. คำนำ (Introduction) -->
     <section id="introduction">
       <h2>คำนำ</h2>
       <div class="section-card flex-card">
@@ -62,16 +68,17 @@
           </div>
         </div>
         <div class="card-media">
-          <img src="intro-image.jpg" alt="รูปประกอบคำนำ" class="section-img">
+          <img src="intro-image.jpg" alt="รูปคำนำ" class="standard-img">
         </div>
       </div>
     </section>
 
+    <!-- 3. ประวัติส่วนตัว (Profile) -->
     <section id="profile">
       <h2>ประวัติส่วนตัว</h2>
       <div class="section-card flex-card reverse-mobile">
         <div class="card-media">
-          <img src="profile-full.jpg" alt="รูปประวัติส่วนตัว" class="section-img">
+          <img src="profile-full.jpg" alt="รูปประวัติส่วนตัว" class="standard-img">
         </div>
         <div class="card-text">
           <ul class="info-list">
@@ -86,6 +93,7 @@
       </div>
     </section>
 
+    <!-- 4. ประวัติการศึกษา (Education) -->
     <section id="education">
       <h2>ประวัติการศึกษา</h2>
       <div class="section-card flex-card">
@@ -100,11 +108,12 @@
           </ul>
         </div>
         <div class="card-media">
-          <img src="high-school.jpg" alt="รูปสถานศึกษา" class="section-img">
+          <img src="high-school.jpg" alt="รูปสถานศึกษา" class="standard-img">
         </div>
       </div>
     </section>
 
+    <!-- 5. ความสนใจในด้านการศึกษาต่อ (Future Study) -->
     <section id="future-study">
       <h2>ความสนใจในด้านการศึกษาต่อ</h2>
       
@@ -114,16 +123,18 @@
         </div>
 
         <div class="uni-grid">
+          <!-- มหาวิทยาลัยที่ 1 -->
           <div class="uni-card">
-            <img src="university1.jpg" alt="มหาวิทยาลัยธรรมศาสตร์" class="uni-img">
+            <img src="university1.jpg" alt="มหาวิทยาลัยธรรมศาสตร์" class="standard-img">
             <div class="uni-info">
               <span class="badge">เป้าหมายทางการศึกษา</span>
               <h4 class="faculty-name">คณะนิติศาสตร์ มหาวิทยาลัยธรรมศาสตร์</h4>
             </div>
           </div>
 
+          <!-- มหาวิทยาลัยที่ 2 -->
           <div class="uni-card">
-            <img src="university2.jpg" alt="มหาวิทยาลัยบูรพา" class="uni-img">
+            <img src="university2.jpg" alt="มหาวิทยาลัยบูรพา" class="standard-img">
             <div class="uni-info">
               <span class="badge highlight">เป้าหมายทางการศึกษา</span>
               <h4 class="faculty-name">คณะนิติศาสตร์ มหาวิทยาลัยบูรพา</h4>
@@ -133,33 +144,38 @@
       </div>
     </section>
 
+    <!-- 6. กิจกรรมที่เข้าร่วม (4 กิจกรรม: บน 2 ล่าง 2) -->
     <section id="activities">
       <h2>กิจกรรมที่เข้าร่วม</h2>
-      <div class="gallery-grid-4">
+      <div class="gallery-grid-2x2">
         
+        <!-- บน 1 -->
         <div class="gallery-card">
-          <img src="activity1.jpg" alt="กิจกรรมที่ 1" class="gallery-img">
+          <img src="activity1.jpg" alt="กิจกรรมที่ 1" class="standard-img">
           <div class="gallery-info">
             <p class="activity-desc">ได้ผ่านเข้า "รอบชิงชนะเลิศ" การแข่งขันตอบปัญหากฎหมาย ประจำปี พ.ศ. 2568</p>
           </div>
         </div>
 
+        <!-- บน 2 -->
         <div class="gallery-card">
-          <img src="activity2.jpg" alt="กิจกรรมที่ 2" class="gallery-img">
+          <img src="activity2.jpg" alt="กิจกรรมที่ 2" class="standard-img">
           <div class="gallery-info">
             <p class="activity-desc">ได้เข้าร่วมการแข่งขันตอบปัญหาเชิงวิชาการเกี่ยวกับวุฒิสภา และการเมืองการปกครองของไทย</p>
           </div>
         </div>
 
+        <!-- ล่าง 1 -->
         <div class="gallery-card">
-          <img src="activity3.jpg" alt="กิจกรรมที่ 3" class="gallery-img">
+          <img src="activity3.jpg" alt="กิจกรรมที่ 3" class="standard-img">
           <div class="gallery-info">
             <p class="activity-desc">ได้เข้าร่วมโครงการทริป "หัวใจอาสาฟื้นฟูป่าชายเลน" ณ สวนป่าชายเลน สอ.รฝ. กองทัพเรือ สัตหีบ</p>
           </div>
         </div>
 
+        <!-- ล่าง 2 -->
         <div class="gallery-card">
-          <img src="activity4.jpg" alt="กิจกรรมที่ 4" class="gallery-img">
+          <img src="activity4.jpg" alt="กิจกรรมที่ 4" class="standard-img">
           <div class="gallery-info">
             <p class="activity-desc">ได้ผ่านการฝึกประสบการณ์วิชาชีพ ที่กลุ่มงานการพยาบาล โรงพยาบาลบ้านบึง</p>
           </div>
@@ -168,19 +184,21 @@
       </div>
     </section>
 
+    <!-- 7. ความสามารถพิเศษ / ทักษะ (3 ทักษะ ปุ่มแคปซูลวงรีเรียงเหมือนเดิม กรอบคนละสีสวยๆ) -->
     <section id="skills">
       <h2>ความสามารถพิเศษ / ทักษะ</h2>
       <div class="section-card">
-        <div class="skills-pill-wrapper">
-          <div class="skill-pill pill-pink">การทำงานเป็นทีม</div>
-          <div class="skill-pill pill-blue">การคิดวิเคราะห์</div>
-          <div class="skill-pill pill-green">ความรับผิดชอบ</div>
-        </div>
+        <ul class="skills-tags-list">
+          <li class="tag-pink">การทำงานเป็นทีม</li>
+          <li class="tag-blue">การคิดวิเคราะห์</li>
+          <li class="tag-green">ความรับผิดชอบ</li>
+        </ul>
       </div>
     </section>
 
   </main>
 
+  <!-- ส่วนท้าย (Footer / ช่องทางการติดต่อ) -->
   <footer>
     <div class="footer-content">
       <h3>ช่องทางการติดต่อ</h3>
@@ -193,6 +211,7 @@
     </div>
   </footer>
 
+  <!-- เชื่อมต่อไฟล์ JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
