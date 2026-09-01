@@ -112,20 +112,9 @@ header {
   z-index: 1;
 }
 
-/* ปรับเป็นรูปสี่เหลี่ยมผืนผ้าขอบมนทรงการ์ดสวยงาม */
-.profile-img-rect {
-  width: 180px;
-  height: 220px;
-  border-radius: 16px;
-  object-fit: cover;
-  border: 4px solid #fff;
-  box-shadow: 0 0 0 3px var(--primary-pink), 0 10px 30px rgba(255, 107, 155, 0.25);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.profile-img-rect:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 0 0 4px var(--primary-blue), 0 15px 35px rgba(0, 150, 199, 0.3);
+.avatar-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 header h1 {
@@ -167,7 +156,7 @@ header .subtitle {
   color: var(--text-muted);
 }
 
-/* ─── Layout & Cards ─── */
+/* ─── Layout & Standard Image (คุมขนาดรูปภาพให้เท่ากันทุกช่อง) ─── */
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -188,6 +177,17 @@ section h2 {
   margin-bottom: 25px;
   color: #ff477e;
   text-shadow: 1px 1px 0 #fff;
+}
+
+/* กำหนดขนาดมาตรฐานรูปภาพให้เท่ากันหมดทุกล็อก */
+.standard-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 3px solid #fff;
+  box-shadow: 0 6px 20px rgba(0, 150, 199, 0.15);
+  display: block;
 }
 
 .section-card {
@@ -216,17 +216,7 @@ section h2 {
 }
 
 .card-media {
-  flex: 0 0 320px;
-  text-align: center;
-}
-
-.section-img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-  border-radius: 14px;
-  border: 3px solid #fff;
-  box-shadow: 0 6px 20px rgba(0, 150, 199, 0.15);
+  flex: 0 0 300px;
 }
 
 .signature-box {
@@ -296,7 +286,7 @@ section h2 {
 
 .uni-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 25px;
 }
 
@@ -314,26 +304,20 @@ section h2 {
   border-color: var(--primary-pink);
 }
 
-.uni-img {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-}
-
 .uni-info {
-  padding: 20px;
+  padding: 16px;
   text-align: center;
 }
 
 .faculty-name {
   color: #ff477e;
   font-weight: bold;
-  font-size: 1.05rem;
+  font-size: 1rem;
   margin-top: 5px;
 }
 
-/* ─── Gallery Grid (4 กิจกรรม: 2 บน 2 ล่าง) ─── */
-.gallery-grid-4 {
+/* ─── Gallery Grid 2x2 (บน 2 / ล่าง 2) ─── */
+.gallery-grid-2x2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 22px;
@@ -354,12 +338,6 @@ section h2 {
   border-color: var(--pastel-pink);
 }
 
-.gallery-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
 .gallery-info {
   padding: 16px;
 }
@@ -371,44 +349,45 @@ section h2 {
   font-weight: 600;
 }
 
-/* ─── Skills Section (วงรีพาสเทล 3 สี) ─── */
-.skills-pill-wrapper {
+/* ─── Skills Section (3 ทักษะ ปุ่มแท็กวงรีเรียงพาสเทลคนละสี แบบรูปเดิม) ─── */
+.skills-tags-list {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
+  list-style: none;
+  justify-content: center;
   padding: 10px 0;
 }
 
-.skill-pill {
-  padding: 16px 36px;
-  border-radius: 50px;
-  font-size: 1.1rem;
+.skills-tags-list li {
+  padding: 12px 28px;
+  border-radius: 30px;
   font-weight: 700;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: default;
 }
 
-.skill-pill:hover {
-  transform: translateY(-4px) scale(1.04);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+.skills-tags-list li:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
 
-/* สีพาสเทล 3 โทน */
-.pill-pink {
+/* สีพาสเทลแยก 3 โทนสวยๆ */
+.tag-pink {
   background: #ffd6e0;
   color: #d81b60;
   border: 2px solid #ffb3c6;
 }
 
-.pill-blue {
+.tag-blue {
   background: #c8e7ff;
   color: #0077b6;
   border: 2px solid #90e0ef;
 }
 
-.pill-green {
+.tag-green {
   background: #d8f3dc;
   color: #2d6a4f;
   border: 2px solid #b7e4c7;
@@ -476,7 +455,8 @@ footer a:hover {
     width: 100%;
   }
 
-  .gallery-grid-4 {
+  .gallery-grid-2x2,
+  .uni-grid {
     grid-template-columns: 1fr;
   }
 
