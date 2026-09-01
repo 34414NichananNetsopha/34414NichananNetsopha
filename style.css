@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700;800&display=swap');
+
+* { font-family: 'Sarabun', sans-serif !important; }
+.cover-details p { font-weight: 800 !important; }
+
+
 /* ─── สไตล์ธีมพาสเทล (Pastel Pink, Blue, Mint Green + Gold Sparkles) ─── */
 :root {
   --pastel-pink: #ffd6e0;      
