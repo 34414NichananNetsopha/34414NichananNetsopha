@@ -103,44 +103,74 @@ body {
   text-shadow: 0 0 8px rgba(255, 107, 155, 0.4);
 }
 
-/* ─── Header / หน้าปก ─── */
+/* ─── 🔑 ตัวกำหนดขนาดรูปภาพทุกรูปให้เท่ากันทั้งหมด ─── */
+.img-box {
+  width: 100%;
+  height: 360px; /* ความสูงของรูปภาพเท่ากันเป๊ะทุกรูป */
+  border-radius: 16px;
+  overflow: hidden;
+  border: 4px solid #fff;
+  background-color: #f0f4f8; /* พื้นหลังสำรองขณะรอโหลดรูป */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.portfolio-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ปรับรูปให้อยู่ในอัตราส่วนสวยงามไม่เบี้ยว */
+  display: block;
+}
+
+/* ─── 1. Header / หน้าปก ─── */
 header {
-  text-align: center;
-  padding: 130px 20px 65px 20px;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.9) 0%, transparent 80%);
+  padding: 130px 20px 50px 20px;
   position: relative;
   z-index: 1;
 }
 
-.avatar-wrapper {
+.cover-container {
+  max-width: 1000px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 40px;
+  border-radius: 24px;
+  border: 2px solid #fff;
+  box-shadow: 0 10px 30px rgba(255, 107, 155, 0.1);
+}
+
+.cover-text-side {
+  flex: 1;
+  text-align: left;
 }
 
 header h1 {
-  font-size: 3.3rem;
+  font-size: 3.2rem;
   font-weight: 900;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   color: #ff477e;
-  margin-top: 18px;
-  text-shadow: 2px 2px 0px #fff, 0 0 15px rgba(255, 71, 126, 0.3);
+  text-shadow: 2px 2px 0px #fff, 0 0 15px rgba(255, 71, 126, 0.2);
 }
 
 header .subtitle {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: var(--primary-blue);
   font-weight: bold;
-  margin-top: 5px;
+  margin-top: 4px;
+  margin-bottom: 20px;
 }
 
 .cover-details {
-  margin-top: 18px;
-  line-height: 1.7;
+  line-height: 1.8;
   color: var(--text-dark);
 }
 
 .cover-details .student-name {
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: bold;
   color: #ff477e;
 }
@@ -156,7 +186,12 @@ header .subtitle {
   color: var(--text-muted);
 }
 
-/* ─── Layout & Standard Image (คุมขนาดรูปภาพให้เท่ากันทุกช่อง) ─── */
+.cover-media-side {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+/* ─── Layout General ─── */
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -177,17 +212,6 @@ section h2 {
   margin-bottom: 25px;
   color: #ff477e;
   text-shadow: 1px 1px 0 #fff;
-}
-
-/* กำหนดขนาดมาตรฐานรูปภาพให้เท่ากันหมดทุกล็อก */
-.standard-img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 14px;
-  border: 3px solid #fff;
-  box-shadow: 0 6px 20px rgba(0, 150, 199, 0.15);
-  display: block;
 }
 
 .section-card {
@@ -216,7 +240,8 @@ section h2 {
 }
 
 .card-media {
-  flex: 0 0 300px;
+  width: 320px;
+  flex-shrink: 0;
 }
 
 .signature-box {
@@ -276,7 +301,7 @@ section h2 {
   color: var(--primary-blue);
 }
 
-/* ─── Future Study (2 รูป 2 มหาลัย) ─── */
+/* ─── Future Study (มหาวิทยาลัย) ─── */
 .future-intro {
   margin-bottom: 25px;
   line-height: 1.8;
@@ -292,7 +317,7 @@ section h2 {
 
 .uni-card {
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
   border: 2px solid var(--pastel-blue);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
@@ -305,27 +330,27 @@ section h2 {
 }
 
 .uni-info {
-  padding: 16px;
+  padding: 18px;
   text-align: center;
 }
 
 .faculty-name {
   color: #ff477e;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.05rem;
   margin-top: 5px;
 }
 
-/* ─── Gallery Grid 2x2 (บน 2 / ล่าง 2) ─── */
+/* ─── Gallery Grid 2x2 (กิจกรรม: บน 2 / ล่าง 2) ─── */
 .gallery-grid-2x2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
+  gap: 24px;
 }
 
 .gallery-card {
   background: var(--card-bg);
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
   border: 2px solid #fff;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
@@ -339,7 +364,7 @@ section h2 {
 }
 
 .gallery-info {
-  padding: 16px;
+  padding: 18px;
 }
 
 .activity-desc {
@@ -349,7 +374,7 @@ section h2 {
   font-weight: 600;
 }
 
-/* ─── Skills Section (3 ทักษะ ปุ่มแท็กวงรีเรียงพาสเทลคนละสี แบบรูปเดิม) ─── */
+/* ─── Skills Section ─── */
 .skills-tags-list {
   display: flex;
   flex-wrap: wrap;
@@ -374,7 +399,6 @@ section h2 {
   box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
 
-/* สีพาสเทลแยก 3 โทนสวยๆ */
 .tag-pink {
   background: #ffd6e0;
   color: #d81b60;
@@ -444,15 +468,24 @@ footer a:hover {
   transform: translateY(0);
 }
 
-/* ─── Responsive (มือถือ) ─── */
-@media (max-width: 768px) {
-  .flex-card {
-    flex-direction: column;
+/* ─── Responsive (มือถือและแท็บเล็ต) ─── */
+@media (max-width: 850px) {
+  .cover-container {
+    flex-direction: column-reverse;
+    text-align: center;
   }
 
+  .cover-text-side {
+    text-align: center;
+  }
+
+  .cover-media-side,
   .card-media {
-    flex: 1 1 100%;
     width: 100%;
+  }
+
+  .flex-card {
+    flex-direction: column;
   }
 
   .gallery-grid-2x2,
@@ -461,6 +494,6 @@ footer a:hover {
   }
 
   header h1 {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
   }
 }
