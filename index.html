@@ -3,371 +3,216 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="เว็บไซต์แสดงผลงานและทักษะ Tunwa">
-  <title>ความภาคภูมิใจของ Tunwa // PORTFOLIO</title>
+  <meta name="description" content="แฟ้มสะสมผลงาน (Portfolio) ของ Tunwa">
+  <title>แฟ้มสะสมผลงาน Tunwa // PORTFOLIO</title>
   
-  <style>
-    /* ─── สไตล์ธีมม่วง-ดำ (CSS) ─── */
-    :root {
-      --bg-color: #06060c;
-      --card-bg: #110c22;
-      --primary-neon: #a124ff;   /* ม่วงนีออน */
-      --secondary-neon: #ff007f; /* ชมพูไซเบอร์ */
-      --text-color: #e2daf0;
-      --text-muted: #847999;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-family: 'Segoe UI', Roboto, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      margin: 0;
-      padding-top: 60px;
-      overflow-x: hidden;
-      background-image: 
-        radial-gradient(circle at 80% 20%, rgba(161, 36, 255, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 20% 80%, rgba(255, 0, 127, 0.08) 0%, transparent 50%);
-      background-attachment: fixed;
-    }
-
-    /* แถบเมนูลอยแบบโปร่งแสง (Glassmorphism) */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(6, 6, 12, 0.75);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(161, 36, 255, 0.2);
-      z-index: 1000;
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 15px;
-    }
-
-    .nav-container a {
-      text-decoration: none;
-      color: var(--text-muted);
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.85rem;
-      transition: all 0.3s ease;
-    }
-
-    .nav-container a:hover {
-      color: #fff;
-      text-shadow: 0 0 10px var(--primary-neon);
-    }
-
-    /* ส่วนหัวโปรไฟล์ */
-    header {
-      text-align: center;
-      padding: 120px 20px 80px 20px;
-      background: radial-gradient(circle at center, #170b2e 0%, var(--bg-color) 70%);
-      border-bottom: 1px dashed rgba(161, 36, 255, 0.3);
-    }
-
-    /* สไตล์รูปภาพโปรไฟล์ */
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--primary-neon);
-      box-shadow: 0 0 20px var(--primary-neon), 0 0 40px rgba(161, 36, 255, 0.3);
-      margin-bottom: 20px;
-      transition: transform 0.5s ease;
-    }
-
-    .profile-img:hover {
-      transform: scale(1.05) rotate(5deg);
-      border-color: var(--secondary-neon);
-      box-shadow: 0 0 20px var(--secondary-neon), 0 0 40px rgba(255, 0, 127, 0.3);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 3.5rem;
-      font-weight: 900;
-      letter-spacing: 2px;
-      color: #fff;
-      text-shadow: 0 0 15px var(--primary-neon), 0 0 30px var(--primary-neon);
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: var(--secondary-neon);
-      text-shadow: 0 0 8px var(--secondary-neon);
-      margin-top: 15px;
-      font-weight: bold;
-    }
-
-    /* จัดหน้าเซกชัน */
-    section {
-      scroll-margin-top: 90px;
-      padding: 80px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      border-left: 5px solid var(--primary-neon);
-      padding-left: 15px;
-      margin-bottom: 35px;
-      letter-spacing: 1px;
-      color: #fff;
-      text-shadow: 0 0 10px rgba(161, 36, 255, 0.5);
-    }
-
-    #about p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #cfc5e3;
-    }
-
-    /* การจัดวางกล่องผลงาน */
-    .project-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-    }
-
-    @media (max-width: 768px) {
-      .project-grid { grid-template-columns: 1fr; }
-    }
-
-    .project {
-      background: var(--card-bg);
-      padding: 25px;
-      border-radius: 6px;
-      border: 1px solid rgba(161, 36, 255, 0.15);
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; width: 4px; height: 100%;
-      background: linear-gradient(to bottom, var(--primary-neon), var(--secondary-neon));
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-      border-color: var(--secondary-neon);
-      box-shadow: 0 0 15px rgba(161, 36, 255, 0.3);
-    }
-
-    .project h3 {
-      margin-top: 0;
-      color: #fff;
-      font-size: 1.25rem;
-    }
-
-    .project p {
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 0;
-    }
-
-    /* ─── สไตล์สำหรับแฟ้มสะสมผลงาน (Gallery Section) ─── */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .gallery-card {
-      background: var(--card-bg);
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid rgba(161, 36, 255, 0.2);
-      transition: all 0.3s ease;
-    }
-
-    .gallery-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--secondary-neon);
-      box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
-    }
-
-    .gallery-img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-      border-bottom: 1px solid rgba(161, 36, 255, 0.2);
-    }
-
-    .gallery-info {
-      padding: 15px;
-    }
-
-    .gallery-info h4 {
-      margin: 0 0 8px 0;
-      color: #fff;
-      font-size: 1.1rem;
-    }
-
-    .gallery-info p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    /* รายการทักษะ */
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding: 0;
-      list-style: none;
-    }
-
-    .skills-list li {
-      background: rgba(161, 36, 255, 0.08);
-      border: 1px solid var(--primary-neon);
-      color: #dfb5ff;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-weight: bold;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
-      box-shadow: inset 0 0 5px rgba(161, 36, 255, 0.2);
-    }
-
-    /* ส่วนท้ายเว็บ */
-    footer {
-      background-color: #030306;
-      text-align: center;
-      padding: 40px 20px;
-      margin-top: 100px;
-      border-top: 1px solid rgba(161, 36, 255, 0.15);
-    }
-
-    footer p {
-      margin: 12px 0;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    footer a {
-      color: var(--secondary-neon);
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-
-    footer a:hover {
-      text-shadow: 0 0 8px var(--secondary-neon);
-      text-decoration: underline;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#skills">Skills</a>
+      <a href="#cover">หน้าปก</a>
+      <a href="#introduction">คำนำ</a>
+      <a href="#profile">ประวัติส่วนตัว</a>
+      <a href="#education">ประวัติการศึกษา</a>
+      <a href="#future-study">ความสนใจศึกษาต่อ</a>
+      <a href="#activities">กิจกรรมที่เข้าร่วม</a>
+      <a href="#skills">ความสามารถพิเศษ</a>
     </div>
   </nav>
 
-  <header>
-    <img src="profile.jpg" alt="Tunwa Profile" class="profile-img">
-    <h1>สวัสดี! ผมคือ Tunwa</h1>
-    <p>นี่คือผลงานความภาคภูมิใจของผม</p>
+  <header id="cover">
+    <div class="cover-content">
+      <div class="avatar-wrapper">
+        <img src="profile.jpg" alt="Tunwa Profile" class="profile-img">
+      </div>
+      <h1>PORTFOLIO</h1>
+      <p class="subtitle">แฟ้มสะสมผลงาน</p>
+      <div class="cover-details">
+        <p class="student-name">นายธนโชติ (Tunwa)</p>
+        <p class="student-level">นักเรียนระดับชั้นมัธยมศึกษาปีที่ 6</p>
+        <p class="school-name">โรงเรียน....................................</p>
+      </div>
+    </div>
   </header>
 
-  <section id="about">
-    <h2>เกี่ยวกับผม</h2>
-    <p>ผมเป็นนักเรียนที่มีความสนใจในภาษาอังกฤษ เทคโนโลยี และการพัฒนาเว็บไซต์ มุ่งมั่นที่จะสร้างสรรค์ผลงานดิจิทัลที่ตอบโจทย์และสวยงาม</p>
-  </section>
+  <main class="container">
 
-  <section id="projects">
-    <h2>ผลงานของผม</h2>
-    <div class="project-grid">
-      <div class="project">
-        <h3>เว็บไซต์ Portfolio</h3>
-        <p>เว็บไซต์นี้เป็นหนึ่งในผลงานที่ผมสร้างขึ้นเพื่อแสดงความสามารถและการออกแบบที่เป็นเอกลักษณ์ของผม</p>
-      </div>
-      <div class="project">
-        <h3>แอปพลิเคชันจัดการงาน</h3>
-        <p>แอปพลิเคชันที่ช่วยให้ผู้ใช้จัดการงานในชีวิตประจำวันได้ดีขึ้น เป็นระบบ สะดวก และใช้งานง่าย</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── ส่วนแฟ้มสะสมผลงาน (Gallery Section) ─── -->
-  <section id="gallery">
-    <h2>แฟ้มสะสมผลงาน</h2>
-    <div class="gallery-grid">
-      
-      <div class="gallery-card">
-        <img src="profile.jpg" alt="ภาพกิจกรรม 1" class="gallery-img">
-        <div class="gallery-info">
-          <h4>การแข่งขันทักษะทางเทคโนโลยี</h4>
-          <p>เข้าร่วมการแข่งขันพัฒนาโปรแกรมและเว็บไซต์ระดับโรงเรียน</p>
+    <section id="introduction">
+      <h2>คำนำ</h2>
+      <div class="section-card flex-card">
+        <div class="card-text">
+          <p>แฟ้มสะสมผลงาน (Portfolio) เล่มนี้ จัดทำขึ้นเพื่อเป็นเอกสารนำเสนอข้อมูลเกี่ยวกับประวัติส่วนตัว ประวัติการศึกษา ความรู้ ความสามารถ ทักษะ ตลอดจนผลงานและกิจกรรมต่างๆ ของข้าพเจ้า</p>
+          <p>ข้าพเจ้าหวังเป็นอย่างยิ่งว่า แฟ้มสะสมผลงานฉบับนี้จะทำให้ทุกท่านได้เห็นถึงความตั้งใจ ความมุ่งมั่น และความพร้อมของข้าพเจ้า ไม่ว่าจะเป็นด้านวิชาการ การทำกิจกรรมร่วมกับผู้อื่น และการพัฒนาตนเองอย่างต่อเนื่องเพื่อเตรียมความพร้อมเข้าสู่การศึกษาระดับอุดมศึกษา</p>
+          <p>ขอกราบขอบพระคุณคณะครูอาจารย์ ผู้ปกครอง และเพื่อนๆ ทุกท่าน ที่ได้ให้คำแนะนำ การสนับสนุน และกำลังใจที่ดีแก่ข้าพเจ้าเสมอมา หากแฟ้มสะสมผลงานเล่มนี้มีข้อผิดพลาดประการใด ข้าพเจ้าขออภัยไว้ ณ ที่นี้ด้วย</p>
+          <div class="signature-box">
+            <p><strong>ผู้จัดทำ:</strong> นายธนโชติ (Tunwa)</p>
+          </div>
+        </div>
+        <div class="card-media">
+          <img src="intro-image.jpg" alt="รูปภาพประกอบคำนำ" class="section-img">
+          <p class="img-caption">ภาพกิจกรรมการเรียนและการทำงาน</p>
         </div>
       </div>
+    </section>
 
-      <div class="gallery-card">
-        <img src="profile.jpg" alt="ภาพกิจกรรม 2" class="gallery-img">
-        <div class="gallery-info">
-          <h4>เกียรติบัตรด้านภาษาอังกฤษ</h4>
-          <p>ได้รับรางวัลในการทดสอบทักษะภาษาอังกฤษประจำปี</p>
+    <section id="profile">
+      <h2>ประวัติส่วนตัว</h2>
+      <div class="section-card flex-card reverse-mobile">
+        <div class="card-media">
+          <img src="profile-full.jpg" alt="รูปประวัติส่วนตัว" class="section-img">
+          <p class="img-caption">รูปถ่ายนักเรียน / ข้อมูลส่วนตัว</p>
+        </div>
+        <div class="card-text">
+          <ul class="info-list">
+            <li><strong>ชื่อ-นามสกุล:</strong> นายธนโชติ (Tunwa)</li>
+            <li><strong>ชื่อเล่น:</strong> ธันวา</li>
+            <li><strong>วัน/เดือน/ปีเกิด:</strong> 1 ธันวาคม 2549</li>
+            <li><strong>ระดับชั้น:</strong> มัธยมศึกษาปีที่ 6 (แผนการเรียน วิทยาศาสตร์-คณิตศาสตร์ / คอมพิวเตอร์)</li>
+            <li><strong>สัญชาติ:</strong> ไทย | <strong>เชื้อชาติ:</strong> ไทย | <strong>ศาสนา:</strong> พุทธ</li>
+            <li><strong>งานอดิเรก:</strong> เขียนโปรแกรม, ออกแบบเว็บไซต์, อ่านหนังสือเทคโนโลยี, ฝึกภาษาอังกฤษ</li>
+            <li><strong>คติประจำใจ:</strong> "ไม่มีความสำเร็จใด ที่ได้มาโดยปราศจากความพยายาม"</li>
+            <li><strong>เบอร์โทรศัพท์:</strong> 082-3081284</li>
+            <li><strong>อีเมล:</strong> j72016zx2614@gmail.com</li>
+          </ul>
         </div>
       </div>
+    </section>
 
-      <div class="gallery-card">
-        <img src="profile.jpg" alt="ภาพกิจกรรม 3" class="gallery-img">
-        <div class="gallery-info">
-          <h4>กิจกรรมจิตอาสาและวิชาการ</h4>
-          <p>เข้าร่วมกิจกรรมพัฒนาโรงเรียนและแบ่งปันความรู้ให้เพื่อนๆ</p>
+    <section id="education">
+      <h2>ประวัติการศึกษา</h2>
+      <div class="education-grid">
+        
+        <div class="edu-card">
+          <div class="edu-img-box">
+            <img src="primary-school.jpg" alt="โรงเรียนประถมศึกษา" class="card-top-img">
+          </div>
+          <div class="edu-info">
+            <span class="badge">ประถมศึกษา</span>
+            <h3>ระดับประถมศึกษา</h3>
+            <p class="school-title">โรงเรียนประถมศึกษาตัวอย่าง</p>
+            <p class="edu-detail"><strong>ปีการศึกษา:</strong> 2556 - 2561</p>
+            <p class="edu-detail"><strong>ผลการเรียนเฉลี่ย (GPAX):</strong> 3.85</p>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-img-box">
+            <img src="junior-school.jpg" alt="โรงเรียนมัธยมศึกษาตอนต้น" class="card-top-img">
+          </div>
+          <div class="edu-info">
+            <span class="badge">มัธยมต้น</span>
+            <h3>ระดับมัธยมศึกษาตอนต้น</h3>
+            <p class="school-title">โรงเรียนมัธยมศึกษาตัวอย่าง</p>
+            <p class="edu-detail"><strong>ปีการศึกษา:</strong> 2562 - 2564</p>
+            <p class="edu-detail"><strong>ผลการเรียนเฉลี่ย (GPAX):</strong> 3.75</p>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-img-box">
+            <img src="high-school.jpg" alt="โรงเรียนมัธยมศึกษาตอนปลาย" class="card-top-img">
+          </div>
+          <div class="edu-info">
+            <span class="badge highlight">มัธยมปลาย (ปัจจุบัน)</span>
+            <h3>ระดับมัธยมศึกษาตอนปลาย</h3>
+            <p class="school-title">โรงเรียนมัธยมศึกษาตัวอย่าง</p>
+            <p class="edu-detail"><strong>สายการเรียน:</strong> วิทยาศาสตร์ - คณิตศาสตร์</p>
+            <p class="edu-detail"><strong>ปีการศึกษา:</strong> 2565 - ปัจจุบัน (ม.6)</p>
+            <p class="edu-detail"><strong>ผลการเรียนเฉลี่ยสะสม:</strong> 3.80</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="future-study">
+      <h2>ความสนใจในด้านการศึกษาต่อ</h2>
+      <div class="section-card flex-card">
+        <div class="card-text">
+          <span class="badge highlight">เป้าหมายการศึกษาต่อ</span>
+          <h3 class="faculty-title">คณะวิทยาการสารสนเทศ / คณะวิศวกรรมศาสตร์</h3>
+          <p class="faculty-sub">สาขาวิทยาการคอมพิวเตอร์ (Computer Science) หรือ เทคโนโลยีสารสนเทศ (IT)</p>
+          <hr class="divider">
+          <p><strong>เหตุผลความสนใจ:</strong> เนื่องจากข้าพเจ้ามีความสนใจและหลงใหลในเทคโนโลยีสารสนเทศ การพัฒนาซอฟต์แวร์ และระบบดิจิทัลมาตั้งแต่ระดับมัธยมศึกษา ข้าพเจ้าเชื่อว่าการศึกษาต่อในสาขานี้จะช่วยส่งเสริมและพัฒนาทักษะด้านการเขียนโค้ด การวิเคราะห์ระบบ และการสร้างสรรค์นวัตกรรมดิจิทัลเพื่อนำไปประยุกต์ใช้ในการแก้ปัญหาจริงในสังคมอนาคต</p>
+        </div>
+        <div class="card-media">
+          <img src="future-study.jpg" alt="คณะที่สนใจศึกษาต่อ" class="section-img">
+          <p class="img-caption">สถาบัน / คณะเป้าหมาย</p>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
-  
-  <section id="skills">
-    <h2>ทักษะของผม</h2>
-    <ul class="skills-list">
-      <li>HTML, CSS, JavaScript</li>
-      <li>Python, Django</li>
-      <li>Git และ GitHub</li>
-      <li>การออกแบบ UI/UX</li>
-    </ul>
-  </section>
+    <section id="activities">
+      <h2>กิจกรรมที่เข้าร่วม</h2>
+      <div class="gallery-grid">
+        
+        <div class="gallery-card">
+          <img src="activity1.jpg" alt="ภาพกิจกรรม 1" class="gallery-img">
+          <div class="gallery-info">
+            <span class="activity-date">ปีการศึกษา 2566</span>
+            <h4>การแข่งขันทักษะการพัฒนาเว็บไซต์</h4>
+            <p>เข้าร่วมการแข่งขันการออกแบบและพัฒนา веб-site ระดับโรงเรียน/จังหวัด ได้รับรางวัลรองชนะเลิศอันดับ 1</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="activity2.jpg" alt="ภาพกิจกรรม 2" class="gallery-img">
+          <div class="gallery-info">
+            <span class="activity-date">ปีการศึกษา 2566</span>
+            <h4>ค่ายอบรมเชิงปฏิบัติการด้านเทคโนโลยี</h4>
+            <p>เข้าร่วมโครงการอบรมการเขียนโปรแกรมภาษา Python และการประยุกต์ใช้งานด้าน AI สำหรับนักเรียนมัธยมปลาย</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="activity3.jpg" alt="ภาพกิจกรรม 3" class="gallery-img">
+          <div class="gallery-info">
+            <span class="activity-date">ปีการศึกษา 2565</span>
+            <h4>กิจกรรมจิตอาสาและพัฒนาโรงเรียน</h4>
+            <p>ร่วมจัดกิจกรรมแบ่งปันความรู้ด้านเทคโนโลยีเบื้องต้นให้แก่น้องๆ และร่วมพัฒนาสิ่งแวดล้อมภายในโรงเรียน</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>ความสามารถพิเศษ</h2>
+      <div class="skills-wrapper">
+        
+        <div class="skill-box">
+          <img src="skill-coding.jpg" alt="การพัฒนาเว็บไซต์" class="skill-img">
+          <h4>การพัฒนาเว็บไซต์ (Web Development)</h4>
+          <p>สามารถใช้งาน HTML5, CSS3 และ JavaScript ในการสร้างและออกแบบเว็บไซต์แบบ Responsive รองรับทุกหน้าจอ</p>
+        </div>
+
+        <div class="skill-box">
+          <img src="skill-lang.jpg" alt="ทักษะภาษาอังกฤษ" class="skill-img">
+          <h4>ทักษะภาษาอังกฤษ (English Skill)</h4>
+          <p>สามารถสื่อสาร ค้นคว้าข้อมูล อ่านเอกสารทางเทคนิค และนำเสนอผลงานเป็นภาษาอังกฤษได้เป็นอย่างดี</p>
+        </div>
+
+        <div class="skill-box">
+          <img src="skill-design.jpg" alt="การออกแบบ UI/UX" class="skill-img">
+          <h4>การออกแบบ UI/UX Design</h4>
+          <p>มีความรู้พื้นฐานในการจัดองค์ประกอบสี การออกแบบ Layout การ์ด หน้าจอแอปพลิเคชัน และเว็บไซต์ให้ใช้งานง่าย</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
 
   <footer>
-    <p>
-      สามารถติดต่อผมได้ที่เบอร์โทรศัพท์: <a href="tel:0823081284">082-3081284</a> <br>
-      หรือทางอีเมล: <a href="mailto:j72016zx2614@gmail.com">j72016zx2614@gmail.com</a>
-    </p>
-    <p>&copy; <span id="year"></span> Tunwa. All rights reserved.</p>
+    <div class="footer-content">
+      <p><strong>ช่องทางการติดต่อ:</strong></p>
+      <p>เบอร์โทรศัพท์: <a href="tel:0823081284">082-3081284</a> | อีเมล: <a href="mailto:j72016zx2614@gmail.com">j72016zx2614@gmail.com</a></p>
+      <p class="copyright">&copy; <span id="year"></span> Tunwa Portfolio. All rights reserved.</p>
+    </div>
   </footer>
-        
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>  
+
+  <script src="script.js"></script>
 </body>
 </html>
