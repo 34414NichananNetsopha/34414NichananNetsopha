@@ -14,7 +14,7 @@ const observer = new IntersectionObserver(entries => {
         }
     });
 }, { 
-    threshold: 0.12 
+    threshold: 0.1 
 });
 
 sections.forEach(section => {
@@ -22,4 +22,4 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-console.log("Portfolio Loaded Successfully!");
+console.log("Pastel Portfolio Loaded!");
