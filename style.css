@@ -1,128 +1,449 @@
-/* Reset */
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ─── สไตล์ธีมชมพู-ฟ้า นีออน (Pink & Cyan Neon Tone) ─── */
+:root {
+  --bg-color: #070913;          /* พื้นหลังเข้มอมฟ้า */
+  --card-bg: #111428;          /* พื้นหลังกล่องข้อความ */
+  --primary-neon: #ff2a8d;     /* ชมพูนีออน */
+  --secondary-neon: #00f0ff;   /* ฟ้า/เขียวไซเบอร์นีออน */
+  --text-color: #e5f6ff;
+  --text-muted: #94a3b8;
+  --border-color: rgba(0, 240, 255, 0.2);
 }
 
-/* Body */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', Tahoma, Thonburi, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background: #f5f7fa;
-    color: #333;
-    line-height: 1.6;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 80% 20%, rgba(255, 42, 141, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(0, 240, 255, 0.12) 0%, transparent 50%);
+  background-attachment: fixed;
 }
 
-/* Header */
+/* ─── Navbar ─── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(7, 9, 19, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  padding: 15px 10px;
+}
+
+.nav-container a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: bold;
+  font-size: 0.88rem;
+  transition: all 0.3s ease;
+}
+
+.nav-container a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px var(--primary-neon), 0 0 20px var(--primary-neon);
+}
+
+/* ─── Header / หน้าปก ─── */
 header {
-    background: linear-gradient(135deg, #0077ff, #00c6ff);
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
+  text-align: center;
+  padding: 130px 20px 70px 20px;
+  background: radial-gradient(circle at center, #1a0f2e 0%, var(--bg-color) 70%);
+  border-bottom: 1px dashed rgba(255, 42, 141, 0.3);
+}
+
+.profile-img {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-neon);
+  box-shadow: 0 0 20px var(--primary-neon), 0 0 40px rgba(255, 42, 141, 0.4);
+  transition: transform 0.5s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05) rotate(4deg);
+  border-color: var(--secondary-neon);
+  box-shadow: 0 0 20px var(--secondary-neon), 0 0 40px rgba(0, 240, 255, 0.4);
 }
 
 header h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #fff;
+  margin-top: 15px;
+  text-shadow: 0 0 15px var(--primary-neon), 0 0 30px var(--primary-neon);
 }
 
-header p {
-    font-size: 1.2rem;
+header .subtitle {
+  font-size: 1.3rem;
+  color: var(--secondary-neon);
+  text-shadow: 0 0 8px var(--secondary-neon);
+  font-weight: bold;
+  margin-top: 5px;
 }
 
-/* Sections */
+.cover-details {
+  margin-top: 20px;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.cover-details .student-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* ─── Main Content Layout ─── */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 section {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 30px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  scroll-margin-top: 90px;
+  padding: 50px 0;
 }
 
 section h2 {
-    color: #0077ff;
-    margin-bottom: 20px;
-    border-bottom: 3px solid #0077ff;
-    display: inline-block;
-    padding-bottom: 5px;
+  font-size: 2rem;
+  border-left: 5px solid var(--primary-neon);
+  padding-left: 15px;
+  margin-bottom: 25px;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 42, 141, 0.6);
 }
 
-/* Projects */
-.project {
-    background: #f8f9fc;
-    padding: 20px;
-    border-left: 5px solid #0077ff;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    transition: 0.3s;
+/* ─── Card Design ─── */
+.section-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 30px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
-.project h3 {
-    margin-bottom: 8px;
-    color: #333;
+.flex-card {
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
 
-.project:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+.card-text {
+  flex: 1;
+  line-height: 1.8;
+  font-size: 1rem;
 }
 
-/* Skills (ส่วนที่เพิ่มเข้ามาเพื่อรองรับ <ul> <li> ใน HTML) */
-#skills ul {
-    list-style: none; /* เอาจุดกลมๆ ออก */
-    display: flex;
-    flex-wrap: wrap; /* ให้ปุ่มตกบรรทัดใหม่ได้ถ้าจอแคบ */
-    gap: 10px;       /* ระยะห่างระหว่างปุ่ม */
-    padding: 0;
+.card-text p {
+  margin-bottom: 12px;
 }
 
-#skills li {
-    background: #eef2ff;
-    color: #0077ff;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: 0.2s;
+.card-media {
+  flex: 0 0 320px;
+  text-align: center;
 }
 
-#skills li:hover {
-    background: #0077ff;
-    color: white;
+.section-img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--secondary-neon);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
 }
 
-/* Footer Styling & Links */
+.img-caption {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.signature-box {
+  margin-top: 20px;
+  text-align: right;
+  color: var(--secondary-neon);
+}
+
+/* ─── Info List (ประวัติส่วนตัว) ─── */
+.info-list {
+  list-style: none;
+}
+
+.info-list li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+  padding-bottom: 6px;
+}
+
+.info-list strong {
+  color: var(--secondary-neon);
+}
+
+/* ─── Badges & Tags ─── */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(0, 240, 255, 0.1);
+  color: var(--secondary-neon);
+  border: 1px solid var(--secondary-neon);
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.badge.highlight {
+  background: rgba(255, 42, 141, 0.15);
+  color: var(--primary-neon);
+  border-color: var(--primary-neon);
+}
+
+/* ─── Education Grid ─── */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.edu-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-neon);
+  box-shadow: 0 0 20px rgba(255, 42, 141, 0.2);
+}
+
+.card-top-img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.edu-info {
+  padding: 20px;
+}
+
+.edu-info h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+.school-title {
+  color: var(--secondary-neon);
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.edu-detail {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+/* ─── Future Study ─── */
+.faculty-title {
+  color: var(--primary-neon);
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.faculty-sub {
+  color: var(--secondary-neon);
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 15px 0;
+}
+
+/* ─── Gallery / Activities Grid ─── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.gallery-card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-neon);
+  box-shadow: 0 0 15px rgba(255, 42, 141, 0.3);
+}
+
+.gallery-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.gallery-info {
+  padding: 18px;
+}
+
+.activity-date {
+  font-size: 0.75rem;
+  color: var(--primary-neon);
+  font-weight: bold;
+}
+
+.gallery-info h4 {
+  color: #fff;
+  margin: 6px 0;
+  font-size: 1.05rem;
+}
+
+.gallery-info p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* ─── Skills Section ─── */
+.skills-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.skill-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.skill-box:hover {
+  border-color: var(--secondary-neon);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+  transform: translateY(-5px);
+}
+
+.skill-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.skill-box h4 {
+  color: var(--secondary-neon);
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.skill-box p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* ─── Footer ─── */
 footer {
-    text-align: center;
-    padding: 40px 20px;
-    color: #777;
-    font-size: 0.9rem;
+  background-color: #04050a;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 60px;
+  border-top: 1px solid var(--border-color);
 }
 
 footer p {
-    margin-bottom: 8px;
+  margin: 8px 0;
+  font-size: 0.95rem;
 }
 
 footer a {
-    color: #0077ff;
-    text-decoration: none; /* เอาเส้นใต้ของลิงก์ออก */
-    font-weight: bold;
-    transition: 0.2s;
+  color: var(--primary-neon);
+  text-decoration: none;
+  font-weight: bold;
 }
 
 footer a:hover {
-    text-decoration: underline; /* ให้มีเส้นใต้ตอนเอาเมาส์มาชี้ */
-    color: #0056b3;
+  text-shadow: 0 0 8px var(--primary-neon);
+  text-decoration: underline;
 }
 
-/* CSS สำหรับ Effect Fade In ตอน Scroll */
+.copyright {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 15px;
+}
+
+/* ─── Animation Fade In ─── */
 .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .show {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Responsive (หน้าจอขนาดเล็ก/มือถือ) ─── */
+@media (max-width: 768px) {
+  .flex-card {
+    flex-direction: column;
+  }
+
+  .card-media {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .nav-container {
+    gap: 10px 12px;
+  }
+}
