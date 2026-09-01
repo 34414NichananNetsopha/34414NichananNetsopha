@@ -38,18 +38,22 @@
 
   <!-- 1. หน้าปก (Cover) -->
   <header id="cover">
-    <div class="cover-content">
-      <div class="avatar-wrapper">
-        <!-- รูปหน้าปกขนาดเท่ากับรูปส่วนอื่นๆ -->
-        <img src="Untitled design.png" alt="ณิชนันท์ เนตรโสภา" class="standard-img">
+    <div class="cover-container">
+      <div class="cover-text-side">
+        <h1>PORTFOLIO</h1>
+        <p class="subtitle">✨ แฟ้มสะสมผลงาน ✨</p>
+        <div class="cover-details">
+          <p class="student-name">นางสาวณิชนันท์ เนตรโสภา</p>
+          <p class="student-level">นักเรียนชั้นมัธยมศึกษาปีที่ 6</p>
+          <p class="student-plan">สายการเรียน คณิตศาสตร์-เตรียมวิศวะ</p>
+          <p class="school-name">โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”</p>
+        </div>
       </div>
-      <h1>PORTFOLIO</h1>
-      <p class="subtitle">✨ แฟ้มสะสมผลงาน ✨</p>
-      <div class="cover-details">
-        <p class="student-name">นางสาวณิชนันท์ เนตรโสภา</p>
-        <p class="student-level">นักเรียนชั้นมัธยมศึกษาปีที่ 6</p>
-        <p class="student-plan">สายการเรียน คณิตศาสตร์-เตรียมวิศวะ</p>
-        <p class="school-name">โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”</p>
+      <div class="cover-media-side">
+        <!-- รูปหน้าปกขนาดเท่ากับทุกช่อง -->
+        <div class="img-box">
+          <img src="Untitled design.png" alt="รูปหน้าปก ณิชนันท์ เนตรโสภา" class="portfolio-img">
+        </div>
       </div>
     </div>
   </header>
@@ -68,7 +72,9 @@
           </div>
         </div>
         <div class="card-media">
-          <img src="intro-image.jpg" alt="รูปคำนำ" class="standard-img">
+          <div class="img-box">
+            <img src="intro-image.jpg" alt="คำนำ" class="portfolio-img">
+          </div>
         </div>
       </div>
     </section>
@@ -78,7 +84,9 @@
       <h2>ประวัติส่วนตัว</h2>
       <div class="section-card flex-card reverse-mobile">
         <div class="card-media">
-          <img src="profile-full.jpg" alt="รูปประวัติส่วนตัว" class="standard-img">
+          <div class="img-box">
+            <img src="profile-full.jpg" alt="ประวัติส่วนตัว" class="portfolio-img">
+          </div>
         </div>
         <div class="card-text">
           <ul class="info-list">
@@ -108,7 +116,9 @@
           </ul>
         </div>
         <div class="card-media">
-          <img src="high-school.jpg" alt="รูปสถานศึกษา" class="standard-img">
+          <div class="img-box">
+            <img src="high-school.jpg" alt="ประวัติการศึกษา" class="portfolio-img">
+          </div>
         </div>
       </div>
     </section>
@@ -125,7 +135,9 @@
         <div class="uni-grid">
           <!-- มหาวิทยาลัยที่ 1 -->
           <div class="uni-card">
-            <img src="university1.jpg" alt="มหาวิทยาลัยธรรมศาสตร์" class="standard-img">
+            <div class="img-box">
+              <img src="university1.jpg" alt="มหาวิทยาลัยธรรมศาสตร์" class="portfolio-img">
+            </div>
             <div class="uni-info">
               <span class="badge">เป้าหมายทางการศึกษา</span>
               <h4 class="faculty-name">คณะนิติศาสตร์ มหาวิทยาลัยธรรมศาสตร์</h4>
@@ -134,7 +146,9 @@
 
           <!-- มหาวิทยาลัยที่ 2 -->
           <div class="uni-card">
-            <img src="university2.jpg" alt="มหาวิทยาลัยบูรพา" class="standard-img">
+            <div class="img-box">
+              <img src="university2.jpg" alt="มหาวิทยาลัยบูรพา" class="portfolio-img">
+            </div>
             <div class="uni-info">
               <span class="badge highlight">เป้าหมายทางการศึกษา</span>
               <h4 class="faculty-name">คณะนิติศาสตร์ มหาวิทยาลัยบูรพา</h4>
@@ -144,14 +158,16 @@
       </div>
     </section>
 
-    <!-- 6. กิจกรรมที่เข้าร่วม (4 กิจกรรม: บน 2 ล่าง 2) -->
+    <!-- 6. กิจกรรมที่เข้าร่วม (4 กิจกรรม: บน 2 / ล่าง 2) -->
     <section id="activities">
       <h2>กิจกรรมที่เข้าร่วม</h2>
       <div class="gallery-grid-2x2">
         
         <!-- บน 1 -->
         <div class="gallery-card">
-          <img src="activity1.jpg" alt="กิจกรรมที่ 1" class="standard-img">
+          <div class="img-box">
+            <img src="activity1.jpg" alt="กิจกรรมที่ 1" class="portfolio-img">
+          </div>
           <div class="gallery-info">
             <p class="activity-desc">ได้ผ่านเข้า "รอบชิงชนะเลิศ" การแข่งขันตอบปัญหากฎหมาย ประจำปี พ.ศ. 2568</p>
           </div>
@@ -159,7 +175,9 @@
 
         <!-- บน 2 -->
         <div class="gallery-card">
-          <img src="activity2.jpg" alt="กิจกรรมที่ 2" class="standard-img">
+          <div class="img-box">
+            <img src="activity2.jpg" alt="กิจกรรมที่ 2" class="portfolio-img">
+          </div>
           <div class="gallery-info">
             <p class="activity-desc">ได้เข้าร่วมการแข่งขันตอบปัญหาเชิงวิชาการเกี่ยวกับวุฒิสภา และการเมืองการปกครองของไทย</p>
           </div>
@@ -167,7 +185,9 @@
 
         <!-- ล่าง 1 -->
         <div class="gallery-card">
-          <img src="activity3.jpg" alt="กิจกรรมที่ 3" class="standard-img">
+          <div class="img-box">
+            <img src="activity3.jpg" alt="กิจกรรมที่ 3" class="portfolio-img">
+          </div>
           <div class="gallery-info">
             <p class="activity-desc">ได้เข้าร่วมโครงการทริป "หัวใจอาสาฟื้นฟูป่าชายเลน" ณ สวนป่าชายเลน สอ.รฝ. กองทัพเรือ สัตหีบ</p>
           </div>
@@ -175,7 +195,9 @@
 
         <!-- ล่าง 2 -->
         <div class="gallery-card">
-          <img src="activity4.jpg" alt="กิจกรรมที่ 4" class="standard-img">
+          <div class="img-box">
+            <img src="activity4.jpg" alt="กิจกรรมที่ 4" class="portfolio-img">
+          </div>
           <div class="gallery-info">
             <p class="activity-desc">ได้ผ่านการฝึกประสบการณ์วิชาชีพ ที่กลุ่มงานการพยาบาล โรงพยาบาลบ้านบึง</p>
           </div>
@@ -184,7 +206,7 @@
       </div>
     </section>
 
-    <!-- 7. ความสามารถพิเศษ / ทักษะ (3 ทักษะ ปุ่มแคปซูลวงรีเรียงเหมือนเดิม กรอบคนละสีสวยๆ) -->
+    <!-- 7. ความสามารถพิเศษ / ทักษะ -->
     <section id="skills">
       <h2>ความสามารถพิเศษ / ทักษะ</h2>
       <div class="section-card">
