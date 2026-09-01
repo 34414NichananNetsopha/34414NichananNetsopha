@@ -22,4 +22,4 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-console.log("Portfolio Loaded Successfully!");
+console.log("Portfolio Updated!");
