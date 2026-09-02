@@ -1,10 +1,10 @@
-// อัปเดตปี ค.ศ. ปัจจุบันอัตโนมัติในส่วน Footer
+// แสดงปีปัจจุบันใน Footer อัตโนมัติ
 const yearElement = document.getElementById("year");
 if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
 }
 
-// เอฟเฟกต์ Scroll Fade-In เลื่อนหน้าจอแล้วค่อยๆ ปรากฏ
+// เอฟเฟกต์ Fade In เลื่อนแสดงผลเมื่อ Scroll สกอรล์ลงมา
 const sections = document.querySelectorAll("section");
 
 const observer = new IntersectionObserver(entries => {
@@ -14,7 +14,7 @@ const observer = new IntersectionObserver(entries => {
         }
     });
 }, { 
-    threshold: 0.1 
+    threshold: 0.15 
 });
 
 sections.forEach(section => {
@@ -22,4 +22,5 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-console.log("Portfolio Updated!");
+// ข้อความต้อนรับใน Console
+console.log("Welcome to Tunwa Pink-Cyan Portfolio!");
