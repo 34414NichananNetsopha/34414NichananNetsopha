@@ -178,14 +178,18 @@ header .subtitle {
 .cover-details .student-level,
 .cover-details .student-plan {
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
-/* ปรับชื่อโรงเรียนให้ขนาด สี และความหนาเหมือนสายการเรียน */
+/* ปรับชื่อโรงเรียนให้ขนาด สี และตัวหนาเท่ากับสายการเรียนเป๊ะๆ */
 .cover-details .school-name {
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 700 !important;
   color: var(--text-dark);
+}
+
+.cover-details .school-name b {
+  font-weight: 700 !important;
 }
 
 .cover-media-side {
