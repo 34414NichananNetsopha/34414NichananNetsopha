@@ -9,17 +9,17 @@
 body {
     font-family: 'Mali', 'Sarabun', cursive, sans-serif;
     
-    /* สร้างพื้นหลังสีชมพู-ครีมพาสเทล พร้อมรัศมีแสงระยิบระยับด้วย CSS */
+    /* === ลายวิ้งๆ พาสเทล รัศมีแสงฟรุ้งฟริ้งด้วย CSS 100% === */
     background-color: #fff2f5;
     background-image: 
-        /* จุดกลิตเตอร์เล็กๆ กระจายทั่วหน้าจอ */
+        /* เม็ดกลิตเตอร์วิ้งๆ เล็กๆ กระจายทั่วหน้าจอ */
         radial-gradient(#ffccd5 1.5px, transparent 1.5px),
         radial-gradient(#ffe5ec 1.5px, #fff2f5 1.5px),
-        /* รัศมีแสงพาสเทลนุ่มนวลแบบในภาพ */
-        radial-gradient(circle at 20% 20%, rgba(255, 182, 193, 0.4) 0%, transparent 40%),
-        radial-gradient(circle at 80% 30%, rgba(255, 223, 186, 0.4) 0%, transparent 40%),
-        radial-gradient(circle at 30% 70%, rgba(224, 251, 252, 0.5) 0%, transparent 45%),
-        radial-gradient(circle at 70% 85%, rgba(243, 207, 248, 0.4) 0%, transparent 40%);
+        /* รัศมีแสงโทนพาสเทลหลากสี (ชมพู ส้ม คราม ม่วง) */
+        radial-gradient(circle at 20% 20%, rgba(255, 182, 193, 0.45) 0%, transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(255, 223, 186, 0.45) 0%, transparent 40%),
+        radial-gradient(circle at 30% 70%, rgba(224, 251, 252, 0.55) 0%, transparent 45%),
+        radial-gradient(circle at 70% 85%, rgba(243, 207, 248, 0.45) 0%, transparent 40%);
     background-position: 0 0, 15px 15px, 0 0, 0 0, 0 0, 0 0;
     background-size: 30px 30px, 30px 30px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
     background-attachment: fixed;
@@ -28,7 +28,7 @@ body {
     min-height: 100vh;
 }
 
-/* แถบเมนูด้านบน แบบกล่องแยกชิ้น โปร่งแสงแบบกระจก */
+/* แถบเมนูด้านบน แบบกล่องแยกชิ้น โปร่งแสงกระจกใสมองเห็นลายด้านหลัง */
 .navbar {
     display: flex;
     justify-content: center;
