@@ -12,8 +12,10 @@ body {
     /* === พื้นหลังลายวิ้งๆ พาสเทล รัศมีแสงฟรุ้งฟริ้ง (CSS 100%) === */
     background-color: #fff2f5;
     background-image: 
+        /* เม็ดกลิตเตอร์วิ้งๆ เล็กๆ กระจายทั่วหน้าจอ */
         radial-gradient(#ffccd5 1.5px, transparent 1.5px),
         radial-gradient(#ffe5ec 1.5px, #fff2f5 1.5px),
+        /* รัศมีแสงโทนพาสเทลหลากสี (ชมพู ส้ม คราม ม่วง) */
         radial-gradient(circle at 20% 20%, rgba(255, 182, 193, 0.45) 0%, transparent 40%),
         radial-gradient(circle at 80% 30%, rgba(255, 223, 186, 0.45) 0%, transparent 40%),
         radial-gradient(circle at 30% 70%, rgba(224, 251, 252, 0.55) 0%, transparent 45%),
@@ -26,7 +28,7 @@ body {
     min-height: 100vh;
 }
 
-/* แถบเมนูด้านบน */
+/* แถบเมนูด้านบน แบบกล่องแยกชิ้น โปร่งแสงกระจกใสมองเห็นลายด้านหลัง */
 .navbar {
     display: flex;
     justify-content: center;
@@ -94,16 +96,16 @@ body {
     backdrop-filter: blur(5px);
 }
 
-/* หน้าปก & โปรไฟล์ (ปรับเป็นสี่เหลี่ยมจัตุรัสสม่ำเสมอ) */
+/* หน้าปก & โปรไฟล์ */
 .profile-card {
     text-align: center;
 }
 
 .profile-img {
     width: 100%;
-    max-width: 250px;
-    aspect-ratio: 1 / 1; /* กำหนดสัดส่วนสี่เหลี่ยมจัตุรัส */
-    object-fit: cover;   /* ตัดครอบรูปภาพให้พอดีกรอบ ไม่ยืดเบี้ยว */
+    max-width: 260px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
     display: block;
     margin: 0 auto 18px auto;
     border-radius: 16px;
@@ -202,7 +204,7 @@ body {
     color: #4a3e3d;
 }
 
-/* ความสนใจในการศึกษาต่อ (ปรับเป็นสี่เหลี่ยมจัตุรัสสม่ำเสมอเท่าหน้าแรก) */
+/* === ความสนใจในการศึกษาต่อ (ปรับขนาดรูปภาพให้เท่ากับรูปโปรไฟล์หน้าแรก) === */
 .university-block {
     margin-top: 20px;
     padding: 24px;
@@ -214,9 +216,9 @@ body {
 
 .university-logo {
     width: 100%;
-    max-width: 250px;
-    aspect-ratio: 1 / 1; /* กำหนดสัดส่วนสี่เหลี่ยมจัตุรัส */
-    object-fit: cover;   /* ตัดครอบรูปภาพให้พอดีกรอบ ไม่ยืดเบี้ยว */
+    max-width: 260px; /* ขนาดความกว้างเท่ารูปโปรไฟล์ */
+    aspect-ratio: 3 / 4; /* ล็อกสัดส่วนทรงแนวตั้งเท่ากับหน้าแรก */
+    object-fit: cover;
     display: block;
     margin: 0 auto 18px auto;
     border-radius: 16px;
