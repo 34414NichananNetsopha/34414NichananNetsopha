@@ -1,1 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@400;600;700&family=Mitr:wght@400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Mali', 'Sarabun', cursive, sans-serif;
+    
+    /* === พื้นหลังลายวิ้งๆ พาสเทล รัศมีแสงฟรุ้งฟริ้ง (CSS 100%) === */
+    background-color: #fff2f5;
+    background-image: 
+        /* เม็ดกลิตเตอร์วิ้งๆ เล็กๆ กระจายทั่วหน้าจอ */
+        radial-gradient(#ffccd5 1.5px, transparent 1.5px),
+        radial-gradient(#ffe5ec 1.5px, #fff2f5 1.5px),
+        /* รัศมีแสงโทนพาสเทลหลากสี (ชมพู ส้ม คราม ม่วง) */
+        radial-gradient(circle at 20% 20%, rgba(255, 182, 193, 0.45) 0%, transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(255, 223, 186, 0.45) 0%, transparent 40%),
+        radial-gradient(circle at 30% 70%, rgba(224, 251, 252, 0.55) 0%, transparent 45%),
+        radial-gradient(circle at 70% 85%, rgba(243, 207, 248, 0.45) 0%, transparent 40%);
+    background-position: 0 0, 15px 15px, 0 0, 0 0, 0 0, 0 0;
+    background-size: 30px 30px, 30px 30px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    background-attachment: fixed;
+    
+    color: #4a3e3d;
+    min-height: 100vh;
+}
+
+/* แถบเมนูด้านบน แบบกล่องแยกชิ้น โปร่งแสงกระจกใสมองเห็นลายด้านหลัง */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px 10px;
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.25);
+    z-index: 100;
+}
+
+.navbar a {
+    color: #ff5c7c;
+    background-color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 15px;
+    font-weight: 700;
+    border: 2px solid #ffb6c1;
+    border-radius: 18px;
+    box-shadow: 0 3px 8px rgba(255, 141, 161, 0.2);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.navbar a:hover, .navbar a.active {
+    background-color: #ff8da1;
+    color: #ffffff;
+    border-color: #ff8da1;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(255, 92, 124, 0.35);
+}
+
+/* โครงสร้างหน้า */
+.page-container {
+    width: 90%;
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 0 10px;
+}
+
+.heading {
+    font-family: 'Mitr', sans-serif;
+    font-size: 28px;
+    margin-bottom: 22px;
+    color: #ff5c7c;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
+}
+
+/* การ์ดเนื้อหา */
+.content-card, .profile-card, .contact-box {
+    background: rgba(255, 255, 255, 0.90);
+    border-radius: 18px;
+    padding: 24px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(255, 182, 193, 0.25);
+    border: 2px solid #ffe3e8;
+    border-top: 6px solid #ff8da1;
+    backdrop-filter: blur(5px);
+}
+
+/* หน้าปก & โปรไฟล์ */
+.profile-card {
+    text-align: center;
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 260px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 18px auto;
+    border-radius: 16px;
+    border: 4px solid #ffffff;
+    box-shadow: 0 4px 12px rgba(255, 141, 161, 0.25);
+    background-color: #fff;
+}
+
+.profile-details h2 {
+    font-family: 'Mitr', sans-serif;
+    font-size: 21px;
+    color: #ff5c7c;
+    margin-bottom: 8px;
+}
+
+.profile-details h3 {
+    font-size: 15px;
+    color: #666;
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+
+/* ช่องทางการติดต่อ */
+.contact-box h2 {
+    font-family: 'Mitr', sans-serif;
+    font-size: 19px;
+    color: #ff5c7c;
+    margin-bottom: 16px;
+}
+
+.contact-box p {
+    margin-bottom: 12px;
+    font-size: 15px;
+    word-break: break-word;
+}
+
+.contact-box a {
+    color: #ff5c7c;
+    text-decoration: underline;
+}
+
+/* คำนำ */
+.foreword-p {
+    text-indent: 2em;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    font-size: 15px;
+    color: #4a3e3d;
+}
+
+.foreword-author {
+    margin-top: 25px;
+    text-align: right;
+    font-size: 15px;
+}
+
+.author-label {
+    font-weight: bold;
+    color: #ff5c7c;
+}
+
+.author-name {
+    color: #333;
+}
+
+/* ประวัติส่วนตัว */
+.profile-card ul {
+    list-style: none;
+    text-align: left;
+    margin-top: 15px;
+}
+
+.profile-card li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #ffd1dc;
+    font-size: 15px;
+}
+
+.profile-card li strong {
+    color: #ff5c7c;
+}
+
+/* ประวัติการศึกษา */
+.edu-card p {
+    padding: 12px 0;
+    border-bottom: 1px dashed #ffd1dc;
+    font-size: 15px;
+}
+
+.edu-level {
+    font-weight: bold;
+    color: #ff5c7c;
+}
+
+.school-name {
+    color: #4a3e3d;
+}
+
+/* === ความสนใจในการศึกษาต่อ (ปรับขนาดรูปภาพให้เท่ากับรูปโปรไฟล์หน้าแรก) === */
+.university-block {
+    margin-top: 20px;
+    padding: 24px;
+    background-color: rgba(255, 247, 249, 0.9);
+    border: 1px solid #ffd8e0;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.university-logo {
+    width: 100%;
+    max-width: 260px; /* ขนาดความกว้างเท่ารูปโปรไฟล์ */
+    aspect-ratio: 3 / 4; /* ล็อกสัดส่วนทรงแนวตั้งเท่ากับหน้าแรก */
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 18px auto;
+    border-radius: 16px;
+    border: 4px solid #ffffff;
+    box-shadow: 0 4px 12px rgba(255, 141, 161, 0.25);
+    background-color: #fff;
+}
+
+.university-name {
+    font-family: 'Mitr', sans-serif;
+    font-size: 17px;
+    color: #ff5c7c;
+    margin-bottom: 10px;
+}
+
+.university-reason {
+    text-align: left;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #555;
+    text-indent: 1.5em;
+}
+
+/* กิจกรรมและทักษะ */
+.item-title {
+    font-family: 'Mitr', sans-serif;
+    font-size: 17px;
+    color: #ff5c7c;
+    margin-bottom: 12px;
+}
+
+.item-img-wrapper {
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+.item-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid #ffe3e8;
+}
+
+.item-desc {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #555;
+}
 
