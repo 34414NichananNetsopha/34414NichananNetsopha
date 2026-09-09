@@ -94,19 +94,20 @@ body {
     backdrop-filter: blur(5px);
 }
 
-/* หน้าปก & ประวัติส่วนตัว (ปรับขนาดตามอัตราส่วนรูปจริง ไม่ยืดเบี้ยว) */
+/* หน้าปก & ประวัติส่วนตัว (ปรับเป็นรูปสี่เหลี่ยมจัตุรัส ไม่ยืดเบี้ยว) */
 .profile-card {
     text-align: center;
 }
 
 .profile-img {
-    width: 100%;
+    width: 250px;              /* กำหนดขนาดความกว้างพอดีๆ */
     max-width: 100%;
-    height: auto;
+    aspect-ratio: 1 / 1;        /* กำหนดเป็นทรงสี่เหลี่ยมจัตุรัส */
+    object-fit: cover;         /* ครอปตัดรูปภาพให้เต็มกรอบโดยไม่เบี้ยว */
     display: block;
     margin: 0 auto 18px auto;
-    border-radius: 12px;
-    border: 2px solid #ffe3e8;
+    border-radius: 16px;       /* มุมโค้งสวยงามมนๆ */
+    border: 3px solid #ffe3e8;
     box-shadow: 0 4px 12px rgba(255, 141, 161, 0.15);
 }
 
@@ -200,7 +201,7 @@ body {
     color: #4a3e3d;
 }
 
-/* ความสนใจในการศึกษาต่อ (ปรับขนาดตามอัตราส่วนรูปจริง ไม่ยืดเบี้ยว) */
+/* ความสนใจในการศึกษาต่อ (คงเดิม) */
 .university-block {
     margin-top: 20px;
     padding: 24px;
@@ -236,7 +237,7 @@ body {
     text-indent: 1.5em;
 }
 
-/* กิจกรรมและทักษะ (คงเดิมตามที่คุณตั้งค่าไว้) */
+/* กิจกรรมและทักษะ (คงเดิม) */
 .item-title {
     font-family: 'Mitr', sans-serif;
     font-size: 17px;
