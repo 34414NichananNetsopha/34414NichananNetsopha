@@ -8,18 +8,27 @@
 
 body {
     font-family: 'Mali', 'Sarabun', cursive, sans-serif;
-    /* ตั้งค่ารูปพื้นหลังพาสเทล ให้แสดงผลเต็มจอ ไม่ซ้ำแถบ และติดแน่นเวลาเลื่อนหน้าจอ */
-    background-image: url('bg.png'); /* สามารถเปลี่ยนชื่อไฟล์ตามรูปภาพพื้นหลังของคุณ เช่น bg.jpg หรือ bg.png */
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    
+    /* สร้างพื้นหลังสีชมพู-ครีมพาสเทล พร้อมรัศมีแสงระยิบระยับด้วย CSS */
+    background-color: #fff2f5;
+    background-image: 
+        /* จุดกลิตเตอร์เล็กๆ กระจายทั่วหน้าจอ */
+        radial-gradient(#ffccd5 1.5px, transparent 1.5px),
+        radial-gradient(#ffe5ec 1.5px, #fff2f5 1.5px),
+        /* รัศมีแสงพาสเทลนุ่มนวลแบบในภาพ */
+        radial-gradient(circle at 20% 20%, rgba(255, 182, 193, 0.4) 0%, transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(255, 223, 186, 0.4) 0%, transparent 40%),
+        radial-gradient(circle at 30% 70%, rgba(224, 251, 252, 0.5) 0%, transparent 45%),
+        radial-gradient(circle at 70% 85%, rgba(243, 207, 248, 0.4) 0%, transparent 40%);
+    background-position: 0 0, 15px 15px, 0 0, 0 0, 0 0, 0 0;
+    background-size: 30px 30px, 30px 30px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
     background-attachment: fixed;
-    background-color: #fff0f5;
+    
     color: #4a3e3d;
     min-height: 100vh;
 }
 
-/* แถบเมนูด้านบน แบบกล่องแยกชิ้น โปร่งแสงเห็นพื้นหลังด้านหลัง */
+/* แถบเมนูด้านบน แบบกล่องแยกชิ้น โปร่งแสงแบบกระจก */
 .navbar {
     display: flex;
     justify-content: center;
@@ -29,16 +38,16 @@ body {
     padding: 15px 10px;
     position: sticky;
     top: 0;
-    background-color: rgba(255, 255, 255, 0.45); /* โปร่งใสเพื่อให้เห็นลายพื้นหลังดาว/กลิตเตอร์ */
-    backdrop-filter: blur(8px); /* เอฟเฟกต์เบลอแบบกระจกใส */
-    -webkit-backdrop-filter: blur(8px);
-    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
+    background-color: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.25);
     z-index: 100;
 }
 
 .navbar a {
     color: #ff5c7c;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
     text-decoration: none;
     padding: 8px 16px;
     font-size: 15px;
@@ -77,14 +86,14 @@ body {
 
 /* การ์ดเนื้อหา */
 .content-card, .profile-card, .contact-box {
-    background: rgba(255, 255, 255, 0.88); /* สีขาวอมชมพูโปร่งแสงเล็กน้อย เพื่อเน้นเนื้อหาให้อ่านง่าย */
+    background: rgba(255, 255, 255, 0.90);
     border-radius: 18px;
     padding: 24px;
     margin-bottom: 25px;
-    box-shadow: 0 8px 20px rgba(255, 182, 193, 0.3);
+    box-shadow: 0 8px 20px rgba(255, 182, 193, 0.25);
     border: 2px solid #ffe3e8;
     border-top: 6px solid #ff8da1;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(5px);
 }
 
 /* หน้าปก & โปรไฟล์ */
