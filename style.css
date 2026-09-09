@@ -12,10 +12,8 @@ body {
     /* === พื้นหลังลายวิ้งๆ พาสเทล รัศมีแสงฟรุ้งฟริ้ง (CSS 100%) === */
     background-color: #fff2f5;
     background-image: 
-        /* เม็ดกลิตเตอร์วิ้งๆ เล็กๆ กระจายทั่วหน้าจอ */
         radial-gradient(#ffccd5 1.5px, transparent 1.5px),
         radial-gradient(#ffe5ec 1.5px, #fff2f5 1.5px),
-        /* รัศมีแสงโทนพาสเทลหลากสี (ชมพู ส้ม คราม ม่วง) */
         radial-gradient(circle at 20% 20%, rgba(255, 182, 193, 0.45) 0%, transparent 40%),
         radial-gradient(circle at 80% 30%, rgba(255, 223, 186, 0.45) 0%, transparent 40%),
         radial-gradient(circle at 30% 70%, rgba(224, 251, 252, 0.55) 0%, transparent 45%),
@@ -28,7 +26,7 @@ body {
     min-height: 100vh;
 }
 
-/* แถบเมนูด้านบน แบบกล่องแยกชิ้น โปร่งแสงกระจกใสมองเห็นลายด้านหลัง */
+/* แถบเมนูด้านบน */
 .navbar {
     display: flex;
     justify-content: center;
@@ -96,22 +94,20 @@ body {
     backdrop-filter: blur(5px);
 }
 
-/* หน้าปก & โปรไฟล์ */
+/* หน้าปก & ประวัติส่วนตัว (ปรับขนาดตามอัตราส่วนรูปจริง ไม่ยืดเบี้ยว) */
 .profile-card {
     text-align: center;
 }
 
 .profile-img {
     width: 100%;
-    max-width: 260px;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
+    max-width: 100%;
+    height: auto;
     display: block;
     margin: 0 auto 18px auto;
-    border-radius: 16px;
-    border: 4px solid #ffffff;
-    box-shadow: 0 4px 12px rgba(255, 141, 161, 0.25);
-    background-color: #fff;
+    border-radius: 12px;
+    border: 2px solid #ffe3e8;
+    box-shadow: 0 4px 12px rgba(255, 141, 161, 0.15);
 }
 
 .profile-details h2 {
@@ -204,7 +200,7 @@ body {
     color: #4a3e3d;
 }
 
-/* === ความสนใจในการศึกษาต่อ (ปรับขนาดรูปภาพให้เท่ากับรูปโปรไฟล์หน้าแรก) === */
+/* ความสนใจในการศึกษาต่อ (ปรับขนาดตามอัตราส่วนรูปจริง ไม่ยืดเบี้ยว) */
 .university-block {
     margin-top: 20px;
     padding: 24px;
@@ -216,15 +212,13 @@ body {
 
 .university-logo {
     width: 100%;
-    max-width: 260px; /* ขนาดความกว้างเท่ารูปโปรไฟล์ */
-    aspect-ratio: 3 / 4; /* ล็อกสัดส่วนทรงแนวตั้งเท่ากับหน้าแรก */
-    object-fit: cover;
+    max-width: 100%;
+    height: auto;
     display: block;
     margin: 0 auto 18px auto;
-    border-radius: 16px;
-    border: 4px solid #ffffff;
-    box-shadow: 0 4px 12px rgba(255, 141, 161, 0.25);
-    background-color: #fff;
+    border-radius: 12px;
+    border: 2px solid #ffe3e8;
+    box-shadow: 0 4px 12px rgba(255, 141, 161, 0.15);
 }
 
 .university-name {
@@ -242,7 +236,7 @@ body {
     text-indent: 1.5em;
 }
 
-/* กิจกรรมและทักษะ */
+/* กิจกรรมและทักษะ (คงเดิมตามที่คุณตั้งค่าไว้) */
 .item-title {
     font-family: 'Mitr', sans-serif;
     font-size: 17px;
@@ -268,4 +262,3 @@ body {
     line-height: 1.7;
     color: #555;
 }
-
