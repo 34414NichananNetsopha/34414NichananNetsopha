@@ -65,10 +65,10 @@ body {
     box-shadow: 0 5px 12px rgba(255, 92, 124, 0.35);
 }
 
-/* โครงสร้างหน้า - ขยายความกว้างการ์ดให้ใหญ่เท่าหน้าตัวอย่าง */
+/* โครงสร้างหน้า */
 .page-container {
     width: 92%;
-    max-width: 850px;           /* ปรับขยายจาก 650px เป็น 850px เพื่อให้การ์ดกว้างสวยงามบนจอคอม */
+    max-width: 850px;
     margin: 30px auto;
     padding: 0 10px;
 }
@@ -211,8 +211,9 @@ body {
     text-align: center;
 }
 
+/* ปรับตรามหาวิทยาลัยให้ขนาดเล็กลง กระทัดรัด สวยงามพอดี */
 .university-logo {
-    width: 100%;
+    width: 220px;               /* ปรับความกว้างให้เล็กลงพอดีๆ */
     max-width: 100%;
     height: auto;
     display: block;
