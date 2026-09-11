@@ -211,9 +211,9 @@ body {
     text-align: center;
 }
 
-/* ล็อกขนาดตรามหาวิทยาลัยให้เล็กลงพอดี ไม่ใหญ่เกินไป */
+/* ปรับตรามหาวิทยาลัยให้ขนาดเท่ากับรูปโปรไฟล์หน้าปก (250px) */
 .university-logo {
-    width: 160px !important;
+    width: 250px !important;
     max-width: 100% !important;
     height: auto !important;
     display: block !important;
