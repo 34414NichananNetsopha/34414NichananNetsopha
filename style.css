@@ -211,13 +211,13 @@ body {
     text-align: center;
 }
 
-/* ปรับตรามหาวิทยาลัยให้ขนาดเล็กลง กระทัดรัด สวยงามพอดี */
+/* ล็อกขนาดตรามหาวิทยาลัยให้เล็กลงพอดี ไม่ใหญ่เกินไป */
 .university-logo {
-    width: 220px;               /* ปรับความกว้างให้เล็กลงพอดีๆ */
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 18px auto;
+    width: 160px !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto 18px auto !important;
     border-radius: 12px;
     border: 2px solid #ffe3e8;
     box-shadow: 0 4px 12px rgba(255, 141, 161, 0.15);
