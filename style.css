@@ -65,10 +65,10 @@ body {
     box-shadow: 0 5px 12px rgba(255, 92, 124, 0.35);
 }
 
-/* โครงสร้างหน้า */
+/* โครงสร้างหน้า - ขยายความกว้างการ์ดให้ใหญ่เท่าหน้าตัวอย่าง */
 .page-container {
-    width: 90%;
-    max-width: 650px;
+    width: 92%;
+    max-width: 850px;           /* ปรับขยายจาก 650px เป็น 850px เพื่อให้การ์ดกว้างสวยงามบนจอคอม */
     margin: 30px auto;
     padding: 0 10px;
 }
@@ -86,7 +86,7 @@ body {
 .content-card, .profile-card, .contact-box {
     background: rgba(255, 255, 255, 0.90);
     border-radius: 18px;
-    padding: 24px;
+    padding: 28px;
     margin-bottom: 25px;
     box-shadow: 0 8px 20px rgba(255, 182, 193, 0.25);
     border: 2px solid #ffe3e8;
@@ -94,19 +94,19 @@ body {
     backdrop-filter: blur(5px);
 }
 
-/* หน้าปก & ประวัติส่วนตัว (ปรับเป็นรูปสี่เหลี่ยมจัตุรัส ไม่ยืดเบี้ยว) */
+/* หน้าปก & ประวัติส่วนตัว */
 .profile-card {
     text-align: center;
 }
 
 .profile-img {
-    width: 250px;              /* กำหนดขนาดความกว้างพอดีๆ */
+    width: 250px;
     max-width: 100%;
-    aspect-ratio: 1 / 1;        /* กำหนดเป็นทรงสี่เหลี่ยมจัตุรัส */
-    object-fit: cover;         /* ครอปตัดรูปภาพให้เต็มกรอบโดยไม่เบี้ยว */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     display: block;
     margin: 0 auto 18px auto;
-    border-radius: 16px;       /* มุมโค้งสวยงามมนๆ */
+    border-radius: 16px;
     border: 3px solid #ffe3e8;
     box-shadow: 0 4px 12px rgba(255, 141, 161, 0.15);
 }
@@ -201,7 +201,7 @@ body {
     color: #4a3e3d;
 }
 
-/* ความสนใจในการศึกษาต่อ (คงเดิม) */
+/* ความสนใจในการศึกษาต่อ */
 .university-block {
     margin-top: 20px;
     padding: 24px;
@@ -237,7 +237,7 @@ body {
     text-indent: 1.5em;
 }
 
-/* กิจกรรมและทักษะ (คงเดิม) */
+/* กิจกรรมและทักษะ */
 .item-title {
     font-family: 'Mitr', sans-serif;
     font-size: 17px;
